@@ -1,15 +1,24 @@
 ## Converting Excel Data to SQL Database
 
 ### Endpoint
-```http
-https://localhost:9000/api/customers
-https://localhost:9000/api/customer/:id
-https://localhost:9000/api/uploads
+GET all data
+```sh
+curl -X GET https://localhost:9000/api/customers
+```
+
+GET data by id
+```sh
+curl -X GET https://localhost:9000/api/customer/:id
+```
+
+Upload data
+```sh
+curl -X POST -F document=@yourFileHere.xlsx https://localhost:9000/api/uploads
 ```
 
 ### Upload file using curl
 ```sh
-curl -F document=@yourFileHere.xlsx localhost:9000/api/uploads
+curl -X POST -F document=@yourFileHere.xlsx localhost:9000/api/uploads
 ```
 
 ### Format file
